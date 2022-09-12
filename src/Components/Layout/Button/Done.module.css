@@ -1,0 +1,11 @@
+.done {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}

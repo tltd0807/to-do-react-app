@@ -1,0 +1,16 @@
+.item-container {
+  width: 90vw;
+  max-width: 40rem;
+  background-color: hsl(235, 24%, 19%);
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  align-items: center;
+}
+.item {
+  box-sizing: border-box;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}

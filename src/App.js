@@ -1,5 +1,5 @@
 import "./App.css";
-import Card from "./Components/Layout/Card/Card";
+import ToDoList from "./Components/ToDoBody/ToDoList/ToDoList";
 import Author from "./Components/Footer/Author/Author";
 import Header from "./Components/Header/Header";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="body-full body--dark">
       <Header />
-      <Card></Card>
+      <ToDoList></ToDoList>
       <Author className="footer" />
     </div>
   );
