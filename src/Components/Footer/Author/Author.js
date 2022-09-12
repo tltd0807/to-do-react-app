@@ -2,7 +2,7 @@ import classes from "./Author.module.css";
 
 const Author = (props) => {
   return (
-    <div class={`${classes.attribution} ${props.className}`}>
+    <div className={`${classes.attribution} ${props.className}`}>
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
         Frontend Mentor

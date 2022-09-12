@@ -1,0 +1,17 @@
+.container {
+  width: 90vw;
+  max-width: 40rem;
+  background-color: hsl(235, 24%, 19%);
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: -10vh;
+}
+.item {
+  box-sizing: border-box;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
