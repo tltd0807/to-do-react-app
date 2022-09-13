@@ -1,0 +1,16 @@
+.container {
+  width: 90vw;
+  max-width: 40rem;
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(236, 9%, 61%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 15px 0;
+}
+.container div {
+  margin: 0 20px;
+  cursor: pointer;
+}
