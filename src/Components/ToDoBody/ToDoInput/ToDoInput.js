@@ -5,8 +5,8 @@ const ToDoInput = (props) => {
     <Card className={classes.container}>
       <div className={classes.item}>
         <div className={classes["round"]}></div>
-        <div>{props.children}</div>
       </div>
+      <input placeholder={props.children} className={classes.input} />
     </Card>
   );
 };
