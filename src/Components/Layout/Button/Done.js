@@ -1,9 +1,11 @@
 import classes from "./Done.module.css";
 import Icon from "../../../asset/images/icon-check.svg";
 const Done = (props) => {
+  const isTick = props.isTick ? "isTick" : "";
+  console.log(isTick);
   return (
-    <div className={`${classes.done} ${props.className}`}>
-      <img src={Icon} alt="icon-check" />
+    <div className={`${classes.done} ${props.className} ${classes[isTick]}`}>
+      {props.isTick && <img src={Icon} alt="icon-check" />}
     </div>
   );
 };

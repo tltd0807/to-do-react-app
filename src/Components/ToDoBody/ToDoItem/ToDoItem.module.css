@@ -2,15 +2,32 @@
   width: 90vw;
   max-width: 40rem;
   background-color: hsl(235, 24%, 19%);
-  color: aliceblue;
+  color: hsl(236, 9%, 61%);
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
   align-items: center;
 }
+
 .item {
   box-sizing: border-box;
   padding: 15px 20px;
   display: flex;
   align-items: center;
+}
+.item-container:hover {
+  cursor: pointer;
+  color: hsl(236, 33%, 92%);
+}
+/* NOT WORKING */
+.item-container:hover .done {
+  border: 1px solid linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+@media (min-width: 1200px) {
+  .close {
+    opacity: 0;
+  }
+  .item-container:hover .close {
+    opacity: 1;
+  }
 }

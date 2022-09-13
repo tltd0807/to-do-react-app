@@ -6,10 +6,10 @@ const ToDoItem = (props) => {
   return (
     <div className={`${classes["item-container"]} ${props.className} `}>
       <div className={classes.item}>
-        <Done />
+        <Done isTick={false} className={classes.done} />
         <div>{props.children}</div>
       </div>
-      <Close />
+      <Close className={classes.close} />
     </div>
   );
 };
