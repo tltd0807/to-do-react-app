@@ -3,10 +3,10 @@ import Card from "../../Layout/Card/Card";
 const ToDoInput = (props) => {
   return (
     <Card className={classes.container}>
-      <div className={classes.item}>
+      <form className={classes.item}>
         <div className={classes["round"]}></div>
-      </div>
-      <input placeholder={props.children} className={classes.input} />
+        <input placeholder={props.children} className={classes.input} />
+      </form>
     </Card>
   );
 };
