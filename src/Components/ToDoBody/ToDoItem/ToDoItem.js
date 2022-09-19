@@ -9,7 +9,7 @@ const ToDoItem = (props) => {
         <Done isTick={false} className={classes.done} />
         <div>{props.children}</div>
       </div>
-      <Close className={classes.close} />
+      <Close className={classes.close} onClick={props.onClose} />
     </div>
   );
 };

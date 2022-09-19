@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="body-full body--dark">
       <Header />
-      <ToDoList></ToDoList>
+      <ToDoList />
       <Author className="footer" />
     </div>
   );
