@@ -8,6 +8,11 @@ import classes from "./ToDoList.module.css";
 
 const ToDoList = (props) => {
   const [todo, setTodo] = useState("");
+  const [filter, setFilter] = useState({
+    all: true,
+    active: false,
+    completed: false,
+  });
 
   // lấy lên dạng string và parse về arr
   const [todoAll, setTodoAll] = useState(
@@ -61,10 +66,84 @@ const ToDoList = (props) => {
     });
     setTodoAll(newToDoAll);
   };
+  const onFilterHandler = (id) => {
+    if (id === 1) {
+      setFilter({
+        all: true,
+        active: false,
+        completed: false,
+      });
+    } else if (id === 2) {
+      setFilter({
+        all: false,
+        active: true,
+        completed: false,
+      });
+    } else {
+      setFilter({
+        all: false,
+        active: false,
+        completed: true,
+      });
+    }
+  };
+
   useEffect(() => {
     localStorage.setItem("task", JSON.stringify(todoAll));
   }, [todoAll]);
 
+  let todoList;
+  if (filter.all == true) {
+    todoList =
+      todoAll !== null &&
+      todoAll.map((todo) => (
+        <ToDoItem
+          key={todoAll.indexOf(todo)}
+          id={todoAll.indexOf(todo)}
+          isDone={todo.isDone}
+          onClose={() => removeToDoHandler(todoAll.indexOf(todo))}
+          onUpdate={() => updateToDo(todoAll.indexOf(todo))}
+        >
+          {todo.task}
+        </ToDoItem>
+      ));
+  }
+  if (filter.active == true) {
+    todoList =
+      todoAll !== null &&
+      todoAll.map(
+        (todo) =>
+          !todo.isDone && (
+            <ToDoItem
+              key={todoAll.indexOf(todo)}
+              id={todoAll.indexOf(todo)}
+              isDone={todo.isDone}
+              onClose={() => removeToDoHandler(todoAll.indexOf(todo))}
+              onUpdate={() => updateToDo(todoAll.indexOf(todo))}
+            >
+              {todo.task}
+            </ToDoItem>
+          )
+      );
+  }
+  if (filter.completed == true) {
+    todoList =
+      todoAll !== null &&
+      todoAll.map(
+        (todo) =>
+          todo.isDone && (
+            <ToDoItem
+              key={todoAll.indexOf(todo)}
+              id={todoAll.indexOf(todo)}
+              isDone={todo.isDone}
+              onClose={() => removeToDoHandler(todoAll.indexOf(todo))}
+              onUpdate={() => updateToDo(todoAll.indexOf(todo))}
+            >
+              {todo.task}
+            </ToDoItem>
+          )
+      );
+  }
   return (
     <div className={classes.container}>
       <div>
@@ -72,26 +151,14 @@ const ToDoList = (props) => {
           Create a new todo...
         </ToDoInput>
         <Card>
-          {todoAll !== null &&
-            todoAll.map((todo) => (
-              <ToDoItem
-                key={todoAll.indexOf(todo)}
-                id={todoAll.indexOf(todo)}
-                isDone={todo.isDone}
-                onClose={() => removeToDoHandler(todoAll.indexOf(todo))}
-                onUpdate={() => updateToDo(todoAll.indexOf(todo))}
-              >
-                {todo.task}
-              </ToDoItem>
-            ))}
-
+          {todoList}
           <ToDoFooter
             numberOfItems={todoAll ? todoAll.length : 0}
             onClear={onClearHandler}
           ></ToDoFooter>
         </Card>
 
-        <ToDoFilter></ToDoFilter>
+        <ToDoFilter filter={filter} onFilter={onFilterHandler} />
       </div>
     </div>
   );

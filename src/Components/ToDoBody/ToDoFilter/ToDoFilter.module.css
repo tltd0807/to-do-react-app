@@ -14,3 +14,7 @@
   margin: 0 20px;
   cursor: pointer;
 }
+.container div:hover,
+.active {
+  color: hsl(236, 33%, 92%);
+}
