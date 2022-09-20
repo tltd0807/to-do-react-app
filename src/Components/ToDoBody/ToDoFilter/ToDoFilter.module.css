@@ -1,7 +1,6 @@
 .container {
   width: 90vw;
   max-width: 40rem;
-  background-color: hsl(235, 24%, 19%);
   color: hsl(236, 9%, 61%);
   display: flex;
   justify-content: center;
@@ -10,11 +9,23 @@
   box-sizing: border-box;
   padding: 15px 0;
 }
+.dark {
+  background-color: hsl(235, 24%, 19%);
+}
+.light {
+  background-color: white;
+}
 .container div {
   margin: 0 20px;
   cursor: pointer;
 }
-.container div:hover,
-.active {
+.hover-dark:hover,
+.active-dark {
   color: hsl(236, 33%, 92%);
+}
+.hover-light:hover {
+  color: hsl(235, 24%, 19%);
+}
+.active-light {
+  color: hsl(233, 93%, 57%);
 }

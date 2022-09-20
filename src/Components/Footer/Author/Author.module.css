@@ -1,4 +1,9 @@
 .attribution {
   font-family: "Josefin Sans", sans-serif;
+}
+.dark {
   color: white;
+}
+.light {
+  color: hsl(236, 9%, 61%);
 }

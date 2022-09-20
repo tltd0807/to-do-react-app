@@ -1,7 +1,6 @@
 .container {
   width: 90vw;
   max-width: 40rem;
-  background-color: hsl(235, 24%, 19%);
   color: hsl(236, 9%, 61%);
   display: flex;
   justify-content: space-between;
@@ -11,7 +10,12 @@
   padding: 15px 20px;
   box-sizing: border-box;
 }
-
+.dark {
+  background-color: hsl(235, 24%, 19%);
+}
+.light {
+  background-color: white;
+}
 .round {
   width: 20px;
   height: 20px;

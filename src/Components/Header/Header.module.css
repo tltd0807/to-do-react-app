@@ -1,12 +1,19 @@
-.header--dark {
+.header {
   width: 100vw;
   height: 25vh;
-  background: url("../../asset/images/bg-mobile-dark.jpg");
-  background-size: cover;
+
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+.header-dark {
+  background: url("../../asset/images/bg-mobile-dark.jpg");
+  background-size: cover;
+}
+.header-light {
+  background: url("../../asset/images/bg-mobile-light.jpg");
+  background-size: cover;
 }
 .container {
   width: 90vw;
@@ -23,6 +30,12 @@
 .icon {
   width: 30px;
   height: 30px;
+}
+.icon-light {
+  background: url("../../asset/images/icon-moon.svg");
+  background-size: cover;
+}
+.icon-dark {
   background: url("../../asset/images/icon-sun.svg");
   background-size: cover;
 }
