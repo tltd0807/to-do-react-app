@@ -9,3 +9,7 @@
   padding: 15px 20px;
   box-sizing: border-box;
 }
+.clear:hover {
+  cursor: pointer;
+  color: hsl(236, 33%, 92%);
+}

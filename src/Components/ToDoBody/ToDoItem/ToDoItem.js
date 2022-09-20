@@ -6,8 +6,18 @@ const ToDoItem = (props) => {
   return (
     <div className={`${classes["item-container"]} ${props.className} `}>
       <div className={classes.item}>
-        <Done isTick={false} className={classes.done} />
-        <div>{props.children}</div>
+        <Done
+          isTick={props.isDone}
+          className={classes.done}
+          onClick={props.onUpdate}
+        />
+        <div
+          className={`${classes["task"]} ${
+            classes[props.isDone ? "done" : ""]
+          }`}
+        >
+          {props.children}
+        </div>
       </div>
       <Close className={classes.close} onClick={props.onClose} />
     </div>

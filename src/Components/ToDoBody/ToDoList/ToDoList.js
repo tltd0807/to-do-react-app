@@ -24,6 +24,7 @@ const ToDoList = (props) => {
           isDone: false,
           task: todo,
         };
+        // check if todoAll is null
         if (todoAll) {
           setTodoAll([...todoAll, newToDo]);
         } else {
@@ -38,10 +39,28 @@ const ToDoList = (props) => {
     const newToDoAll = todoAll.filter((todo, index) => {
       return index !== id;
     });
-
+    // console.log(newToDoAll);
     setTodoAll(newToDoAll);
   };
-  console.log(todoAll);
+
+  const updateToDo = (id) => {
+    const todo = todoAll.filter((todo, index) => {
+      return index === id;
+    });
+    const newToDoAll = [...todoAll];
+    const newToDo = {
+      isDone: !todo[0].isDone,
+      task: todo[0].task,
+    };
+    newToDoAll[id] = newToDo;
+    setTodoAll(newToDoAll);
+  };
+  const onClearHandler = () => {
+    const newToDoAll = todoAll.filter((todo, index) => {
+      return todo.isDone !== true;
+    });
+    setTodoAll(newToDoAll);
+  };
   useEffect(() => {
     localStorage.setItem("task", JSON.stringify(todoAll));
   }, [todoAll]);
@@ -60,12 +79,16 @@ const ToDoList = (props) => {
                 id={todoAll.indexOf(todo)}
                 isDone={todo.isDone}
                 onClose={() => removeToDoHandler(todoAll.indexOf(todo))}
+                onUpdate={() => updateToDo(todoAll.indexOf(todo))}
               >
                 {todo.task}
               </ToDoItem>
             ))}
 
-          <ToDoFooter numberOfItems={todoAll ? todoAll.length : 0}></ToDoFooter>
+          <ToDoFooter
+            numberOfItems={todoAll ? todoAll.length : 0}
+            onClear={onClearHandler}
+          ></ToDoFooter>
         </Card>
 
         <ToDoFilter></ToDoFilter>

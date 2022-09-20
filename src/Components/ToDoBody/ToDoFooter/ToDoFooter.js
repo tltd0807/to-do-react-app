@@ -4,7 +4,9 @@ const ToDoFooter = (props) => {
   return (
     <div className={classes.container}>
       <div>{`${props.numberOfItems} items left`}</div>
-      <div>Clear Completed</div>
+      <div className={classes.clear} onClick={props.onClear}>
+        Clear Completed
+      </div>
     </div>
   );
 };

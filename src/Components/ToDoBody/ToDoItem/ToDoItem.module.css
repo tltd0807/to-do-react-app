@@ -7,6 +7,7 @@
   justify-content: space-between;
   border-bottom: 1px solid hsl(236, 9%, 61%);
   align-items: center;
+  position: relative;
 }
 
 .item {
@@ -19,9 +20,18 @@
   cursor: pointer;
   color: hsl(236, 33%, 92%);
 }
-/* NOT WORKING */
-.item-container:hover .done {
-  border: 1px solid linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+/* overflow-wrap: break-word; */
+.task {
+  width: 68vw;
+  max-width: 33rem;
+  overflow-wrap: break-word;
+}
+.done {
+  text-decoration: line-through;
+}
+.close {
+  position: absolute;
+  right: 0;
 }
 @media (min-width: 1200px) {
   .close {
